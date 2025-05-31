@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+  <meta charset="UTF-8"> 
+  <title>Clima con Strategy</title> 
+  
+  <style>
+    body { font-family: Arial; padding: 20px; } /* Fuente y espaciado general */
+    label, select, input { margin-top: 10px; display: block; } /* Separación vertical entre elementos */
+    #resultado { margin-top: 20px; font-weight: bold; font-size: 1.2em; } /* Estilo del resultado */
+  </style>
+</head>
+
+<body>
+  <h1>🌤️ Simulador de Clima</h1>
+
+  <!-- Entrada para que el usuario ingrese la temperatura en grados Celsius -->
+  <label for="tempBase">Temperatura base en °C:</label>
+  <input type="number" id="tempBase" value="25"> <!-- Campo numérico con valor por defecto -->
+
+  <!-- Menú desplegable para seleccionar cómo mostrar el clima -->
+  <label for="tipoClima">Mostrar clima como:</label>
+  <select id="tipoClima">
+    <option value="celsius">Celsius</option> <!-- Muestra temperatura como °C -->
+    <option value="fahrenheit">Fahrenheit</option> <!-- Muestra temperatura como °F -->
+    <option value="descripcion">Descripción del clima</option> <!-- Muestra una descripción -->
+  </select>
+
+  <!-- Botón que al hacer clic ejecuta la función mostrarClima() -->
+  <button onclick="mostrarClima()">Mostrar clima</button>
+
+  <!-- Área donde se mostrará el resultado según la estrategia seleccionada -->
+  <div id="resultado">Resultado: -</div>
+
+  <!-- Importa el archivo JavaScript externo con el patrón Strategy implementado -->
+  <script src="Strategy.js"></script>
+</body>
+</html>
